@@ -148,7 +148,3 @@ describe('Food Chain', function () {
   });
 
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> 83016faf9480dde839a5c22863398a8539509cf0
