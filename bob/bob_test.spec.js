@@ -1,7 +1,11 @@
 var Bob = require('./bob.js');
 
 describe("Bob", function() {
-  var bob = new Bob();
+  var bob;
+
+  beforeEach(function(){
+    bob = new Bob();
+  });
 
   it("stating something", function() {
     var result = bob.hey('Tom-ay-to, tom-aaaah-to.');
@@ -83,7 +87,7 @@ describe("Bob", function() {
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  it("prolonged silence", function () {
+   it("prolonged silence", function () {
     var result = bob.hey('   ');
     expect(result).toEqual('Fine. Be that way!');
   });

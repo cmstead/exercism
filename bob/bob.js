@@ -1,4 +1,9 @@
-function Bob() {};
+//
+// This is only a SKELETON file for the "Bob" exercise. It's been provided as a
+// convenience to get you started writing code faster.
+//
+
+var Bob = function() {};
 
 function isShouting(value){
   return value.toUpperCase() === value && value.toLowerCase() !== value;
@@ -13,13 +18,11 @@ function isSilent(value){
 }
 
 Bob.prototype.hey = function(input) {
-  var response = 'Whatever.';
+  var response = isQuestion(input) ? 'Sure.' : 'Whatever.';
 
-  if(isQuestion(input)){ response = 'Sure.'; }
-  if(isShouting(input)){ response = 'Whoa, chill out!'; }
-  if(isSilent(input)){ response = 'Fine. Be that way!'; }
+  response = isShouting(input) ? 'Whoa, chill out!' : response;
 
-  return response;
+  return isSilent(input) ? 'Fine. Be that way!' : response;
 };
 
 module.exports = Bob;
